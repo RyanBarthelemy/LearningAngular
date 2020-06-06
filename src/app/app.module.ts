@@ -21,7 +21,8 @@ import { CelebrationsComponent } from './celebrations/celebrations.component';
 import { OffersComponent } from './offers/offers.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { SignupComponent } from './auth/signup/signup.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     OffersComponent,
     AuthComponent,
     SignInComponent,
-    SignupComponent
+    SignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
