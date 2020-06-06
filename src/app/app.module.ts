@@ -24,6 +24,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,12 +47,13 @@ import { HomeComponent } from './home/home.component';
     AuthComponent,
     SignInComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule /*All the Angular Material stuff we are going to use, see material.module.ts*/
+    MaterialModule, /*All the Angular Material stuff we are going to use, see material.module.ts*/
+    AppRoutingModule /* https://angular.io/guide/router -- See app-routing.module.ts for routing/path information */
   ],
   providers: [],
   bootstrap: [AppComponent]
