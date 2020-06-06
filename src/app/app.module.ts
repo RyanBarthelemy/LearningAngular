@@ -19,6 +19,9 @@ import { WesternWeddingsComponent } from './weddings/western-weddings/western-we
 import { EasternWeddingsComponent } from './weddings/eastern-weddings/eastern-weddings.component';
 import { CelebrationsComponent } from './celebrations/celebrations.component';
 import { OffersComponent } from './offers/offers.component';
+import { AuthComponent } from './auth/auth.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { OffersComponent } from './offers/offers.component';
     WesternWeddingsComponent,
     EasternWeddingsComponent,
     CelebrationsComponent,
-    OffersComponent
+    OffersComponent,
+    AuthComponent,
+    SignInComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
