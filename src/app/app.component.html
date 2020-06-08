@@ -1,7 +1,12 @@
-<button mat-raised-button color="primary"
-        matBadge="8" matBadgePosition="before" matBadgeColor="accent">
-  Action
-</button>
+<mat-sidenav-container>
+  <mat-sidenav>
+    <app-sidenav-list></app-sidenav-list>
+  </mat-sidenav>
 
-<p>If valid page and router works, you will see component view below. Just a success message right now.</p>
-<router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <app-navtabs></app-navtabs>
+  </mat-sidenav-content>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
