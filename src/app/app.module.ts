@@ -29,6 +29,8 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,10 +61,17 @@ import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule, /*All the Angular Material stuff we are going to use, see material.module.ts*/
-    AppRoutingModule
-    /* https://angular.io/guide/router -- See app-routing.module.ts for routing/path information */
+    AppRoutingModule, /* https://angular.io/guide/router -- See app-routing.module.ts for routing/path information */
+    FlexLayoutModule, /* See note at bottom */
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/* Building this application with a responsive layout called Angular Flex Layout.
+* Info can be found here: https://github.com/angular/flex-layout/wiki/Responsive-API
+* How to setup: https://github.com/angular/flex-layout/wiki/Developer-Setup
+*     https://github.com/angular/flex-layout/wiki/NPM-Installs */
+
+
