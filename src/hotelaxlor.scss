@@ -1,0 +1,32 @@
+/* If you don't want to use a pre-built theme and instead want to create a custom theme, you need to create a SASS file.
+ Instructions here: https://material.angular.io/guide/theming#defining-a-custom-theme
+
+ A custom theme file does two things:
+   1: Imports the mat-core() Sass mixin. This includes all common styles that are used by multiple components. This should only be included once in your application. If this mixin is included multiple times, your application will end up with multiple copies of these common styles.
+   2: Defines a theme data structure as the composition of multiple palettes. This object can be created with either the mat-light-theme function or the mat-dark-theme function. The output of this function is then passed to the angular-material-theme mixin, which will output all of the corresponding styles for the theme.
+ */
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$hotelaxlor-primary: mat-palette($mat-teal, 200);
+$hotelaxlor-accent:  mat-palette($mat-amber, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$hotelaxlor-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$hotelaxlor-theme: mat-light-theme($hotelaxlor-primary, $hotelaxlor-accent, $hotelaxlor-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($hotelaxlor-theme);
