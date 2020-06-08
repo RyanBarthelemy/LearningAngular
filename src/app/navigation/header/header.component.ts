@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
   * This method takes the custom event we created 'SideNavigationToggle' and calls emit()
   * This emit tells whoever is listening to this event that the event fired.
   * In app.component.html we have our mat-sidenav-content selector with 'app-header' that is listening for this event.
-  * When it hears this event, it calls 'sidenav.toggle()' which will open/close the nav bar. */
+  * When it hears this event, it calls 'sidenav.toggle()' which will open/close the nav bar.
+  *   //The sidenav object from sidenav.toggle is from 'mat-sidenav' in app.component.html. Note the '#sidenav' which names the object. */
   navButtonClicked_ToggleSidenav() {
     this.SideNavigationToggle.emit();
   }
