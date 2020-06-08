@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <app-sidenav-list></app-sidenav-list>
+    <app-sidenav-list (SideNavItemClickedEvent)="sidenav.toggle()"></app-sidenav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
