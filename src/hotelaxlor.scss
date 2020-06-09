@@ -5,7 +5,6 @@
    1: Imports the mat-core() Sass mixin. This includes all common styles that are used by multiple components. This should only be included once in your application. If this mixin is included multiple times, your application will end up with multiple copies of these common styles.
    2: Defines a theme data structure as the composition of multiple palettes. This object can be created with either the mat-light-theme function or the mat-dark-theme function. The output of this function is then passed to the angular-material-theme mixin, which will output all of the corresponding styles for the theme.
  */
-
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
@@ -14,14 +13,86 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+/* For use in src/lib/core/theming/_palette.scss */
+//Color schemes from https://visme.co/blog/website-color-schemes/
+//Create the palettes below using http://mcg.mbitson.com
+$pal-hotelaxlor-primary: (
+  50 : #f2f8fc,
+  100 : #ddecf7,
+  200 : #c7e0f1,
+  300 : #b1d4eb,
+  400 : #a0cae7,
+  500 : #8fc1e3,
+  600 : #87bbe0,
+  700 : #7cb3dc,
+  800 : #72abd8,
+  900 : #609ed0,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #d6ecff,
+  A700 : #bde1ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$pal-hotelaxlor-accent: (
+  50 : #fffdf7,
+  100 : #fffaeb,
+  200 : #fff7de,
+  300 : #fff3d1,
+  400 : #fff1c7,
+  500 : #ffeebd,
+  600 : #ffecb7,
+  700 : #ffe9ae,
+  800 : #ffe7a6,
+  900 : #ffe298,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+//My color choices are bad, don't judge me.
+$hotelaxlor-primary: mat-palette($pal-hotelaxlor-primary, 700, 300, 900);
+$hotelaxlor-accent: mat-palette($pal-hotelaxlor-accent, 300, 200, 700);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$hotelaxlor-primary: mat-palette($mat-teal, 200);
-$hotelaxlor-accent:  mat-palette($mat-amber, A200, A100, A400);
+//$hotelaxlor-primary: mat-palette($mat-teal, 200); //I'm not a designer
+//$hotelaxlor-accent: mat-palette($mat-teal, 100); //don't judge my terrible color choices.
 
 // The warn palette is optional (defaults to red).
-$hotelaxlor-warn:    mat-palette($mat-red);
+$hotelaxlor-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $hotelaxlor-theme: mat-light-theme($hotelaxlor-primary, $hotelaxlor-accent, $hotelaxlor-warn);
@@ -30,3 +101,16 @@ $hotelaxlor-theme: mat-light-theme($hotelaxlor-primary, $hotelaxlor-accent, $hot
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($hotelaxlor-theme);
+
+//Now any class we define in html can be styled using our custom theme right here:
+.navTabsContainerDiv { //from navtabs.component.html
+  background-color: mat-color($hotelaxlor-primary, 300);
+}
+
+//nav bar hover highlighting
+.mat-list-option-hover,
+.mat-list-option.mat-list-item-focus,
+.mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-list-item.mat-list-item-focus {
+  background-color: mat-color($hotelaxlor-primary, 900);
+}
