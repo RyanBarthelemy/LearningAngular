@@ -102,15 +102,8 @@ $hotelaxlor-theme: mat-light-theme($hotelaxlor-primary, $hotelaxlor-accent, $hot
 // that you are using.
 @include angular-material-theme($hotelaxlor-theme);
 
-//Now any class we define in html can be styled using our custom theme right here:
-.navTabsContainerDiv { //from navtabs.component.html
-  background-color: mat-color($hotelaxlor-primary, 300);
-}
-
-//nav bar hover highlighting
-.mat-list-option-hover,
-.mat-list-option.mat-list-item-focus,
-.mat-nav-list .mat-list-item:hover,
-.mat-nav-list .mat-list-item.mat-list-item-focus {
-  background-color: mat-color($hotelaxlor-primary, 900);
-}
+/* Each component that requires our custom palette theme needs its own scss file like navtabs.component-theme.scss
+  We import that component's scss file like you see below, and also include the theme mixins for each component (as noted by the comment above from Angular theming guide.
+*/
+@import "./app/navigation/navtabs/navtabs.component-theme.scss";
+@include navtabs-component-theme($hotelaxlor-theme)
